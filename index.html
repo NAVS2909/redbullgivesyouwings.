@@ -1,75 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Red Bull — Flavor Experience</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Red Bull educational advertising website project">
+<title>Red Bull — Gives You Wings</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="site">
-  <header class="header">
-    <div class="logo">
-      <div class="bulls">🐂</div>
-      <div class="redbull">Red Bull</div>
-      <div class="wings">GIVES YOU WINGS</div>
-    </div>
-    <nav>
-      <a class="active">HOME</a>
-      <a>FLAVORS</a>
-      <a>ABOUT</a>
-      <a>GALLERY</a>
-    </nav>
-    <div class="tools"><span>⌕</span><span>☰</span></div>
-  </header>
+<header class="header">
+  <a class="brand" href="#home"><div class="brand-name">RED BULL</div><div class="brand-tag">GIVES YOU WINGS</div></a>
+  <nav id="nav"><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#products">FLAVORS</a><a href="#experience">EXPERIENCE</a><a href="#gallery">GALLERY</a><a href="#contact">CONTACT</a></nav>
+  <button class="menu" id="menu">☰</button>
+</header>
 
-  <section class="hero" id="hero">
-    <div class="left-copy">
-      <div class="edition" id="edition">ORIGINAL</div>
-      <h1 id="title">RED BULL</h1>
-      <h2>ENERGY DRINK</h2>
-      <p id="description">The original Red Bull.<br>With the unique combination<br>of high-quality ingredients.</p>
-      <button id="nextMain">NEXT FLAVOR <strong>→</strong></button>
-    </div>
-
-    <div class="product-stage">
-      <div class="light-cloud cloud1"></div>
-      <div class="light-cloud cloud2"></div>
-
-      <div class="can-holder" id="canHolder">
-        <img id="mainCan" alt="Red Bull can">
-      </div>
-
-      <div class="pedestal">
-        <div class="pedestal-ring"></div>
-        <div class="pedestal-top"></div>
-        <div class="pedestal-side"></div>
-        <div class="pedestal-bottom-glow"></div>
-      </div>
-    </div>
-
-    <button class="next-side" id="nextSide">NEXT <i>→</i></button>
-
-    <div class="page-count"><span id="count">1</span> / <span id="total">18</span></div>
-  </section>
-
-  <section class="carousel-area">
-    <button class="circle-arrow" id="prev">←</button>
-    <div class="carousel-window">
-      <div class="carousel-track" id="track"></div>
-    </div>
-    <button class="circle-arrow" id="next">→</button>
-    <div class="dots" id="dots"></div>
-  </section>
-
-  <div class="features">
-    <div><span>ϟ</span><b>ENERGY</b></div>
-    <div><span>◎</span><b>FOCUS</b></div>
-    <div><span>♧</span><b>ACTION</b></div>
+<section class="hero" id="home">
+  <div class="copy">
+    <div class="edition" id="edition">ORIGINAL</div>
+    <h1 id="title">RED BULL</h1>
+    <h2>ENERGY DRINK</h2>
+    <p id="desc">The original Red Bull.<br>With the unique combination<br>of high-quality ingredients.</p>
+    <div><button class="nextBtn" id="nextMain">NEXT FLAVOR <b>→</b></button><a class="learn" href="#about">LEARN MORE</a></div>
   </div>
+  <div class="stage">
+    <div class="glow g1"></div><div class="glow g2"></div>
+    <div class="can" id="can"><img id="mainCan" alt="Red Bull can"></div>
+    <div class="pedestal"><div class="pedSide"></div><div class="pedTop"></div><div class="pedRing"></div></div>
+  </div>
+  <button class="nextSide" id="nextSide">NEXT <b>→</b></button>
+  <div class="counter"><strong id="count">1</strong> / 18</div>
+</section>
 
-  <footer>Independent educational school project — not an official Red Bull website.</footer>
-</div>
+<section class="strip">
+  <button class="arrow" id="prev">←</button><div class="window"><div class="track" id="track"></div></div><button class="arrow" id="next">→</button>
+  <div class="dots" id="dots"></div>
+</section>
+
+<section class="stats"><div><b>1987</b><span>Brand launched</span></div><div><b>ENERGY</b><span>Everyday energy</span></div><div><b>GLOBAL</b><span>Worldwide presence</span></div><div><b>WINGS</b><span>Iconic slogan</span></div></section>
+
+<section class="section" id="about">
+  <div class="heading"><small>THE BRAND</small><h2>BUILT FOR PEOPLE WHO <span>MOVE.</span></h2></div>
+  <div class="about">
+    <div>
+      <p>Red Bull is an energy drink brand founded in 1987. It has developed a strong identity around energy, action, sport, adventure, music and entertainment.</p>
+      <p>The brand is recognised for its distinctive cans, bold visual identity and the famous slogan <strong>“Gives You Wings.”</strong></p>
+      <p>This website is an independent Year 12 school advertising project showing how product presentation, interactive design and branding can work together to create a memorable digital experience.</p>
+    </div>
+    <div class="quote"><div>🐂</div><strong>GIVES YOU WINGS.</strong><small>Brand slogan</small></div>
+  </div>
+</section>
+
+<section class="section dark" id="products">
+  <div class="heading"><small>THE RANGE</small><h2>EXPLORE THE <span>FLAVORS.</span></h2><p>Explore the Red Bull products shown in the interactive experience. Seasonal products and availability can differ by country.</p></div>
+  <div class="products" id="productsGrid"></div>
+</section>
+
+<section class="section" id="experience">
+  <div class="heading"><small>MORE THAN A DRINK</small><h2>ENERGY MEETS <span>ACTION.</span></h2></div>
+  <div class="cards">
+    <article><i>01</i><h3>SPORT</h3><p>Red Bull has a strong connection with competitive sport, performance and athletic events.</p></article>
+    <article><i>02</i><h3>ADVENTURE</h3><p>The brand is associated with extreme sports, ambitious challenges and adventurous experiences.</p></article>
+    <article><i>03</i><h3>MUSIC & CULTURE</h3><p>Events and creative projects help the brand connect with audiences through music and culture.</p></article>
+  </div>
+</section>
+
+<section class="section dark" id="gallery">
+  <div class="heading"><small>THE WORLD OF RED BULL</small><h2>MAKE IT <span>COUNT.</span></h2></div>
+  <div class="gallery"><div><b>ENERGY</b></div><div><b>SPORT</b></div><div><b>ADVENTURE</b></div><div><b>RACING</b></div></div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="heading"><small>GET IN TOUCH</small><h2>READY TO <span>FLY?</span></h2></div>
+  <form id="form"><input required placeholder="Your name"><input required type="email" placeholder="Your email"><textarea required placeholder="Your message"></textarea><button class="nextBtn">SEND MESSAGE →</button></form>
+  <p class="school">Year 12 educational project</p>
+</section>
+
+<footer><div class="footerLogo">RED BULL</div><p>Gives You Wings.</p><div><a href="#home">Home</a><a href="#products">Flavors</a><a href="#contact">Contact</a></div><small>Independent educational school project — not an official Red Bull website.</small></footer>
+<div class="toast" id="toast"></div>
 <script src="script.js"></script>
 </body>
 </html>
