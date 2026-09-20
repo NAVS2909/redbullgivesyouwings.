@@ -20,7 +20,7 @@ const P=[
 ];
 let i=0;const $=x=>document.getElementById(x);
 function theme(){let p=P[i],h=p[3].slice(1),r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);document.documentElement.style.setProperty("--a","#ed1b2f");document.documentElement.style.setProperty("--rgb","237,27,47");$("edition").textContent=p[0];$("title").textContent=p[1];$("desc").innerHTML=p[2];$("count").textContent=i+1;$("mainCan").src=p[4];}
-function carousel(){let t=$("track");t.innerHTML="";P.forEach((p,n)=>{let d=document.createElement("div");d.className="flavor"+(n===i?" active":"");d.innerHTML=`<img src="${p[4]}" alt="${p[0]}"><small>${p[0]}</small>`;d.onclick=()=>go(n);t.appendChild(d)});const step=window.innerWidth<=520?71:window.innerWidth<=900?80:100;const shift=(i-(P.length-1)/2)*step;t.style.setProperty("--shift",shift+"px");let dots=$("dots");dots.innerHTML="";for(let n=0;n<6;n++){let d=document.createElement("span");d.className="dot"+(Math.floor(i/(P.length/6))===n?" on":"");dots.appendChild(d)}}
+function carousel(){let t=$("track");t.innerHTML="";P.forEach((p,n)=>{let d=document.createElement("div");d.className="flavor"+(n===i?" active":"");d.innerHTML=`<img src="${p[4]}" alt="${p[0]}"><small>${p[0]}</small>`;d.onclick=()=>go(n);t.appendChild(d)});requestAnimationFrame(()=>{let a=t.children[i];if(a)a.scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"})});let dots=$("dots");dots.innerHTML="";for(let n=0;n<6;n++){let d=document.createElement("span");d.className="dot"+(Math.floor(i/(P.length/6))===n?" on":"");dots.appendChild(d)}}
 function go(n){n=(n+P.length)%P.length;if(n===i)return;let c=$("can");c.classList.add("exit");setTimeout(()=>{i=n;theme();c.classList.remove("exit");void c.offsetWidth;c.classList.add("enter");carousel();setTimeout(()=>c.classList.remove("enter"),700)},260)}
 $("nextMain").onclick=()=>go(i+1);$("nextSide").onclick=()=>go(i+1);$("next").onclick=()=>go(i+1);$("prev").onclick=()=>go(i-1);
 theme();carousel();
@@ -29,5 +29,3 @@ $("menu").onclick=()=>$("nav").classList.toggle("open");
 document.querySelectorAll("#nav a").forEach(a=>a.onclick=()=>$("nav").classList.remove("open"));
 $("form").onsubmit=e=>{e.preventDefault();$("toast").textContent="Thanks! Your message was received for this school-project demo.";$("toast").classList.add("show");e.target.reset();setTimeout(()=>$("toast").classList.remove("show"),3000)};
 const grid=$("productsGrid");P.forEach((p,n)=>{let d=document.createElement("article");d.className="product";d.innerHTML=`<img src="${p[4]}" alt="${p[0]} Red Bull"><h3>${p[0]}</h3><p>${p[2].replaceAll("<br>"," ")}</p><button>VIEW FLAVOR</button>`;d.querySelector("button").onclick=()=>{go(n);location.hash="home"};grid.appendChild(d)});
-
-window.addEventListener("resize",carousel);
